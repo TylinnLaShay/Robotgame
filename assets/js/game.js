@@ -37,7 +37,8 @@ var fight = function(enemyName) {
           console.log("playerMoney", playerMoney)
           break;
         }
-      }
+        
+        }
   
       // remove enemy's health by subtracting the amount set in the playerAttack variable
       enemyHealth = enemyHealth - playerAttack;
@@ -73,14 +74,21 @@ var fight = function(enemyName) {
         window.alert(playerName + ' still has ' + playerHealth + ' health left.');
       }
     }
-  };
+};
 
 
 
 for(var i = 0; i < enemyNames.length; i++) {
-    var pickedEnemyName = enemyNames[i];
-    enemyHealth = 50;
-    fight(pickedEnemyName);
+    if (playerHealth > 0) {
+        window.alert("Welcome to Robot Gladiators! Round " ( i + 1 ) );
+        var pickedEnemyName = enemyNames[i];
+        enemyHealth = 50;
+        fight(pickedEnemyName);
+    }
+    else {
+        window.alert("You have lost your robot in battle! Game over!");
+        break;
+    }
 }
 
  //fight();
